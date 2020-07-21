@@ -5,6 +5,9 @@ if len(sys.argv) != 2:
 
 cap = cv2.VideoCapture(sys.argv[1])
 
+# the following 3 lines of code depend on cv2 version
+# if you run into an error, try adding cv.CV_ after the cv2.
+# example: cv2.cv.CV_CAP_PROP_FOURCC
 fourcc = cap.get(cv2.CAP_PROP_FOURCC)
 frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
 fps = cap.get(cv2.CAP_PROP_FPS)
