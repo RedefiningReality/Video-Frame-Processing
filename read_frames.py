@@ -1,7 +1,7 @@
 import cv2, sys, os, shutil
 
 if len(sys.argv) != 2:
-	print('Usage: python3 read_frames.py <video file>')
+	print('Usage: python/python3 read_frames.py <video file>')
 
 cap = cv2.VideoCapture(sys.argv[1])
 
