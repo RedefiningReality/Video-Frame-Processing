@@ -10,11 +10,17 @@ if not os.path.exists(directory) or not os.path.isdir(directory):
   exit()
 
 video = input('Output video name: ')
-fps = input('Output video frames per second: ')
-try: 
-  fps = int(fps)
+fourcc = input('Output video encoding: ')
+try:
+  fourcc = int(fourcc)
 except ValueError:
-  print(fps + ' must be an integer')
+  print(fourcc + ' must be an integer')
+  exit()
+fps = input('Output video frames per second: ')
+try:
+  fps = float(fps)
+except ValueError:
+  print(fps + ' must be a float')
   exit()
 
 # Obtains image files in directory
@@ -27,7 +33,7 @@ height, width, _ = frame.shape
 size = (width, height)
 
 def save_video(vid_name, framerate):
-  vid = cv2.VideoWriter(vid_name, int(fourcc), framerate, size)
+  vid = cv2.VideoWriter(vid_name, fourcc, framerate, size)
 
 	for file in files:
 		print('Adding frame ' + file)
