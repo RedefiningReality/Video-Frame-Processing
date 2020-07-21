@@ -43,11 +43,10 @@ while(cap.isOpened()):
 	if save:
 		out = name + '/' + str(counter) + '.png'
 		cv2.imwrite(out, frame)
-	
 	if view:
-    cv2.imshow('frame', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-      break
+    		cv2.imshow('frame', frame)
+    		if cv2.waitKey(1) & 0xFF == ord('q'):
+      			break
 	
 	counter += 1
 
